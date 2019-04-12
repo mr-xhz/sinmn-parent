@@ -4,6 +4,7 @@
   <artifactId>sinmn-parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <url>https://github.com/sinmn/sinmn-parent</url> 
   
   <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -30,6 +31,11 @@
         <aspectj.version>1.8.9</aspectj.version>
         <poi.version>3.17</poi.version>
         <jetty.version>6.1.5</jetty.version>
+        <feign.httpclient.version>8.18.0</feign.httpclient.version>
+        <spring.cloud.version>1.3.5.RELEASE</spring.cloud.version>
+        <zipkin.version>1.2.5.RELEASE</zipkin.version>
+        <commons.version>3.1</commons.version>
+        <commons.lang.version>2.6</commons.lang.version>
         <sinmn.version>1.0.0-SNAPSHOT</sinmn.version>
     </properties>
     
@@ -185,7 +191,7 @@
 	        <!-- sinmn-core start-->
 	        <dependency>
 			    <groupId>com.sinmn.core</groupId>
-			    <artifactId>sinmn-core-util</artifactId>
+			    <artifactId>sinmn-core-utils</artifactId>
 			    <version>${sinmn.version}</version>
 			</dependency>
 			<dependency>
@@ -238,7 +244,56 @@
 				<artifactId>sinmn-tool-autocode</artifactId>
 				<version>${sinmn.version}</version>
 			</dependency>
-        	<!-- tool start -->
+        	<!-- tool end -->
+        	
+        	<!-- feign-httpclient start -->
+        	<dependency>
+	            <groupId>com.netflix.feign</groupId>
+	            <artifactId>feign-httpclient</artifactId>
+	            <version>${feign.httpclient.version}</version>
+	        </dependency>
+	        <!-- feign-httpclient end -->
+	        
+	        <!-- spring cloud start -->
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-starter-ribbon</artifactId>
+	            <version>${spring.cloud.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-starter-hystrix</artifactId>
+	            <version>${spring.cloud.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-starter-feign</artifactId>
+	            <version>${spring.cloud.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-starter-eureka</artifactId>
+	            <version>${spring.cloud.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-starter-zipkin</artifactId>
+	            <version>${zipkin.version}</version>
+	        </dependency>
+	        <!-- spring cloud end -->
+	        
+	         <!-- apache.commons start -->
+	        <dependency>
+	            <groupId>org.apache.commons</groupId>
+	            <artifactId>commons-lang3</artifactId>
+	            <version>${commons.version}</version>
+	        </dependency>
+	        <dependency>
+			    <groupId>commons-lang</groupId>
+			    <artifactId>commons-lang</artifactId>
+			    <version>${commons.lang.version}</version>
+			</dependency>
+	        <!-- apache.commons end -->
         	        	
 		</dependencies>
 	</dependencyManagement>
